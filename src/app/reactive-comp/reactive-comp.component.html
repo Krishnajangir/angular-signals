@@ -1,0 +1,13 @@
+<h2>Grocery List:</h2>
+<ul>
+  <li *ngFor="let item of items">
+    {{item.name}} - {{item.quantity}} - Last edited by: {{item.lastEditedBy}}
+    <button (click)="removeItem(item)">Remove</button>
+  </li>
+</ul>
+<h3>Add Item:</h3>
+<form (submit)="addItem()">
+  <input type="text" [(ngModel)]="newItemName" placeholder="Name">
+  <input type="number" [(ngModel)]="newItemQuantity" placeholder="Quantity">
+  <button type="submit">Add</button>
+</form>
